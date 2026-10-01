@@ -100,6 +100,14 @@ The header and footer are injected by `UI.renderHeader()` and
 `<footer id="site-footer">`. Nav links live in `NAV_LINKS` at the top of
 that file.
 
+## Third-party scripts
+
+Every HTML page includes the **ProveSource** widget snippet at the end of
+its `<head>` (between the `Start/End of Async ProveSource Code` comments).
+It loads `https://cdn.provesrc.com/provesrc.js` asynchronously and is the
+only external dependency. To remove or update it, edit that block in all
+8 HTML files.
+
 ## Changing products
 
 Edit the `PRODUCTS` array in **`js/products.js`**. Each product has:
