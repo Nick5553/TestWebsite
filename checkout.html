@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout · Nova Store</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232dd4bf'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="checkout">
+  <header id="site-header" class="site-header"></header>
+
+  <main id="main" class="container page" tabindex="-1">
+    <div class="page-header">
+      <h1>Checkout</h1>
+    </div>
+
+    <div id="checkout-empty" class="empty-state" hidden data-testid="checkout-empty">
+      <div class="empty-state-icon" aria-hidden="true">🛒</div>
+      <h2>Your cart is empty</h2>
+      <p>Add something to your cart before checking out.</p>
+      <a class="btn btn-primary" href="products.html">Browse products</a>
+    </div>
+
+    <div id="checkout-content" class="checkout-layout">
+      <form id="checkout-form" class="card checkout-form" novalidate data-testid="checkout-form">
+        <div id="error-summary" class="alert alert-error" role="alert" tabindex="-1" hidden data-testid="error-summary"></div>
+
+        <p id="login-hint" class="alert alert-info small" hidden>
+          Have an account? <a href="login.html?next=checkout.html" data-testid="checkout-login-link">Log in</a> to save this order to your history.
+        </p>
+
+        <fieldset>
+          <legend>Contact</legend>
+          <div class="form-grid">
+            <div class="field">
+              <label for="fullName">Full name</label>
+              <input id="fullName" name="fullName" type="text" autocomplete="name" required
+                aria-describedby="fullName-error" data-testid="checkout-fullName">
+              <p id="fullName-error" class="field-error" hidden data-testid="error-fullName"></p>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required
+                aria-describedby="email-error" data-testid="checkout-email">
+              <p id="email-error" class="field-error" hidden data-testid="error-email"></p>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Shipping address</legend>
+          <div class="form-grid">
+            <div class="field span-2">
+              <label for="address">Street address</label>
+              <input id="address" name="address" type="text" autocomplete="street-address" required
+                aria-describedby="address-error" data-testid="checkout-address">
+              <p id="address-error" class="field-error" hidden data-testid="error-address"></p>
+            </div>
+            <div class="field">
+              <label for="city">City</label>
+              <input id="city" name="city" type="text" autocomplete="address-level2" required
+                aria-describedby="city-error" data-testid="checkout-city">
+              <p id="city-error" class="field-error" hidden data-testid="error-city"></p>
+            </div>
+            <div class="field">
+              <label for="zip">Postal code</label>
+              <input id="zip" name="zip" type="text" autocomplete="postal-code" required
+                aria-describedby="zip-error" data-testid="checkout-zip">
+              <p id="zip-error" class="field-error" hidden data-testid="error-zip"></p>
+            </div>
+            <div class="field span-2">
+              <label for="country">Country</label>
+              <select id="country" name="country" autocomplete="country" required
+                aria-describedby="country-error" data-testid="checkout-country">
+                <option value="">Choose a country…</option>
+                <option value="US">United States</option>
+                <option value="CA">Canada</option>
+                <option value="GB">United Kingdom</option>
+                <option value="DE">Germany</option>
+                <option value="FR">France</option>
+                <option value="NL">Netherlands</option>
+                <option value="AU">Australia</option>
+                <option value="JP">Japan</option>
+              </select>
+              <p id="country-error" class="field-error" hidden data-testid="error-country"></p>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Payment</legend>
+          <p class="alert alert-info small">
+            This is a demo. No real payment is made, so don't enter a real card.
+            Use <code>4242 4242 4242 4242</code> to succeed or <code>4000 0000 0000 0002</code> to get a decline.
+          </p>
+          <div class="form-grid">
+            <div class="field span-2">
+              <label for="cardName">Name on card</label>
+              <input id="cardName" name="cardName" type="text" autocomplete="off" required
+                aria-describedby="cardName-error" data-testid="checkout-cardName">
+              <p id="cardName-error" class="field-error" hidden data-testid="error-cardName"></p>
+            </div>
+            <div class="field span-2">
+              <label for="cardNumber">Card number</label>
+              <input id="cardNumber" name="cardNumber" type="text" inputmode="numeric" autocomplete="off"
+                placeholder="4242 4242 4242 4242" required
+                aria-describedby="cardNumber-error" data-testid="checkout-cardNumber">
+              <p id="cardNumber-error" class="field-error" hidden data-testid="error-cardNumber"></p>
+            </div>
+            <div class="field">
+              <label for="cardExpiry">Expiry (MM/YY)</label>
+              <input id="cardExpiry" name="cardExpiry" type="text" inputmode="numeric" autocomplete="off"
+                placeholder="08/29" required
+                aria-describedby="cardExpiry-error" data-testid="checkout-cardExpiry">
+              <p id="cardExpiry-error" class="field-error" hidden data-testid="error-cardExpiry"></p>
+            </div>
+            <div class="field">
+              <label for="cardCvc">Security code (CVC)</label>
+              <input id="cardCvc" name="cardCvc" type="text" inputmode="numeric" autocomplete="off"
+                placeholder="123" required
+                aria-describedby="cardCvc-error" data-testid="checkout-cardCvc">
+              <p id="cardCvc-error" class="field-error" hidden data-testid="error-cardCvc"></p>
+            </div>
+          </div>
+        </fieldset>
+
+        <button type="submit" id="place-order" class="btn btn-primary btn-lg btn-block" data-testid="place-order-button">
+          Place order
+        </button>
+      </form>
+
+      <aside id="checkout-summary" class="card order-summary" aria-labelledby="summary-title" data-testid="checkout-summary"></aside>
+    </div>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/orders.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/pages/checkout.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nova Store · Gear for everyday life</title>
+  <meta name="description" content="Nova Store: a fake online store for testing and experiments.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232dd4bf'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="home">
+  <header id="site-header" class="site-header"></header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Autumn drop · up to 30% off</p>
+          <h1 id="hero-title">Gear that keeps up with you.</h1>
+          <p class="lead">Headphones, wearables, and smart home essentials for people who make things. Everything here is fake, so click around freely.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="products.html" data-testid="hero-shop-all">Shop all products</a>
+            <a class="btn btn-secondary btn-lg" href="products.html?sale=1" data-testid="hero-shop-sale">View sale</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="hero-tile hero-tile-1">🎧</div>
+          <div class="hero-tile hero-tile-2">⌚</div>
+          <div class="hero-tile hero-tile-3">💡</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" aria-labelledby="categories-title">
+      <div class="section-header">
+        <h2 id="categories-title">Shop by category</h2>
+      </div>
+      <div id="category-grid" class="category-grid" data-testid="category-grid"></div>
+    </section>
+
+    <section class="section container" aria-labelledby="featured-title">
+      <div class="section-header">
+        <h2 id="featured-title">Featured products</h2>
+        <a href="products.html" data-testid="view-all-products">View all products →</a>
+      </div>
+      <div id="featured-grid" class="product-grid" data-testid="featured-grid"></div>
+    </section>
+
+    <section class="section container" aria-labelledby="promo-title">
+      <div class="card promo">
+        <div>
+          <p class="eyebrow">Limited time</p>
+          <h2 id="promo-title">Sale prices on headphones, watches, and more</h2>
+          <p class="muted">Discounts are applied automatically. No codes needed.</p>
+        </div>
+        <a class="btn btn-primary" href="products.html?sale=1" data-testid="promo-shop-sale">Shop the sale</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/orders.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/pages/home.js"></script>
+</body>
+</html>

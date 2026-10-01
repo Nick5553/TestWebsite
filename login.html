@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Account · Nova Store</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232dd4bf'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="login">
+  <header id="site-header" class="site-header"></header>
+
+  <main id="main" class="container page" tabindex="-1">
+    <!-- Shown when logged in -->
+    <section id="account-panel" class="card account-panel" hidden aria-labelledby="account-title" data-testid="account-panel">
+      <p class="eyebrow">Your account</p>
+      <h1 id="account-title" tabindex="-1">Logged in as <span data-testid="account-name"></span></h1>
+      <p class="muted" data-testid="account-email"></p>
+      <div class="account-actions">
+        <a class="btn btn-primary" href="products.html">Continue shopping</a>
+        <button type="button" id="logout-button" class="btn btn-secondary" data-testid="logout-button">Log out</button>
+      </div>
+      <h2 class="h3">Order history</h2>
+      <ul id="order-history" class="order-history" data-testid="order-history"></ul>
+      <p id="order-history-empty" class="muted" hidden data-testid="order-history-empty">No orders yet. Orders you place while logged in will show up here.</p>
+    </section>
+
+    <!-- Shown when logged out -->
+    <div id="auth-forms" hidden>
+      <div class="page-header">
+        <h1>Log in or create an account</h1>
+        <p class="muted">Accounts live only in this browser's localStorage. Please don't use a real password.</p>
+      </div>
+
+      <div class="auth-layout">
+        <section class="card auth-card" aria-labelledby="login-title">
+          <h2 id="login-title">Log in</h2>
+          <form id="login-form" novalidate data-testid="login-form">
+            <p class="alert alert-info small">Demo account: <code>demo@example.com</code> / <code>demo1234</code></p>
+            <div id="login-form-error" class="alert alert-error" role="alert" hidden data-testid="login-error"></div>
+            <div class="field">
+              <label for="login-email">Email</label>
+              <input id="login-email" name="email" type="email" autocomplete="username" required
+                aria-describedby="login-email-error" data-testid="login-email">
+              <p id="login-email-error" class="field-error" hidden></p>
+            </div>
+            <div class="field">
+              <label for="login-password">Password</label>
+              <input id="login-password" name="password" type="password" autocomplete="current-password" required
+                aria-describedby="login-password-error" data-testid="login-password">
+              <p id="login-password-error" class="field-error" hidden></p>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" data-testid="login-submit">Log in</button>
+          </form>
+        </section>
+
+        <section class="card auth-card" aria-labelledby="register-title">
+          <h2 id="register-title">Create an account</h2>
+          <form id="register-form" novalidate data-testid="register-form">
+            <div id="register-form-error" class="alert alert-error" role="alert" hidden data-testid="register-error"></div>
+            <div class="field">
+              <label for="register-name">Name</label>
+              <input id="register-name" name="name" type="text" autocomplete="name" required
+                aria-describedby="register-name-error" data-testid="register-name">
+              <p id="register-name-error" class="field-error" hidden></p>
+            </div>
+            <div class="field">
+              <label for="register-email">Email</label>
+              <input id="register-email" name="email" type="email" autocomplete="email" required
+                aria-describedby="register-email-error" data-testid="register-email">
+              <p id="register-email-error" class="field-error" hidden></p>
+            </div>
+            <div class="field">
+              <label for="register-password">Password</label>
+              <input id="register-password" name="password" type="password" autocomplete="new-password" required
+                aria-describedby="register-password-hint register-password-error" data-testid="register-password">
+              <p id="register-password-hint" class="field-hint">At least 6 characters.</p>
+              <p id="register-password-error" class="field-error" hidden></p>
+            </div>
+            <button type="submit" class="btn btn-secondary btn-block" data-testid="register-submit">Create account</button>
+          </form>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/orders.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/pages/login.js"></script>
+</body>
+</html>
